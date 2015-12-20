@@ -63,6 +63,8 @@ io.sockets.on("connection", function(socket) {
 	socket.on("submit", function(data) {
 		console.log("==== Downloading video ==== " + data.url + " id : " + data.id + " " + socket);
 		socket.emit("playing", {'result' : "Trying to download and play"});
+		isplaying = 1;
+		socket.emit("play", {'result' : isplaying});
 		run_shell('youtube-dl', [ '-o', '%(id)s.%(ext)s', '-f 18', 
 				data.url ], 
 		function(me, buffer) {
