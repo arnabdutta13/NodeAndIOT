@@ -1,0 +1,186 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'gulp',
+1 verbose cli   '–save-dev' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 warn package.json YTDedicate@1.0.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'gulp', null ]
+8 verbose cache add name=undefined spec="gulp" args=["gulp",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'gulp',
+9 verbose parsed url   path: 'gulp',
+9 verbose parsed url   href: 'gulp' }
+10 verbose cache add [ '–save-dev', null ]
+11 verbose cache add name=undefined spec="–save-dev" args=["–save-dev",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: '–save-dev',
+12 verbose parsed url   path: '–save-dev',
+12 verbose parsed url   href: '–save-dev' }
+13 silly lockFile 9750c68d-gulp gulp
+14 verbose lock gulp C:\Users\ardutta\AppData\Roaming\npm-cache\9750c68d-gulp.lock
+15 silly lockFile 36ac6028-save-dev –save-dev
+16 verbose lock –save-dev C:\Users\ardutta\AppData\Roaming\npm-cache\36ac6028-save-dev.lock
+17 silly lockFile 36ac6028-save-dev –save-dev
+18 silly lockFile 36ac6028-save-dev –save-dev
+19 silly lockFile 9750c68d-gulp gulp
+20 silly lockFile 9750c68d-gulp gulp
+21 verbose addNamed [ 'gulp', '' ]
+22 verbose addNamed [ null, '*' ]
+23 silly lockFile 72f4391e-gulp gulp@
+24 verbose lock gulp@ C:\Users\ardutta\AppData\Roaming\npm-cache\72f4391e-gulp.lock
+25 verbose addNamed [ '–save-dev', '' ]
+26 verbose addNamed [ null, '*' ]
+27 silly lockFile 370b9e36-save-dev –save-dev@
+28 verbose lock –save-dev@ C:\Users\ardutta\AppData\Roaming\npm-cache\370b9e36-save-dev.lock
+29 silly addNameRange { name: 'gulp', range: '*', hasData: false }
+30 silly addNameRange { name: '–save-dev', range: '*', hasData: false }
+31 verbose request where is /–save-dev
+32 verbose request registry https://registry.npmjs.org/
+33 verbose request id 163e9e4b398e8b39
+34 verbose url raw /–save-dev
+35 verbose url resolving [ 'https://registry.npmjs.org/', './%E2%80%93save-dev' ]
+36 verbose url resolved https://registry.npmjs.org/%E2%80%93save-dev
+37 verbose request where is https://registry.npmjs.org/%E2%80%93save-dev
+38 info trying registry request attempt 1 at 20:54:26
+39 http GET https://registry.npmjs.org/%E2%80%93save-dev
+40 verbose request where is /gulp
+41 verbose request registry https://registry.npmjs.org/
+42 verbose url raw /gulp
+43 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+44 verbose url resolved https://registry.npmjs.org/gulp
+45 verbose request where is https://registry.npmjs.org/gulp
+46 info trying registry request attempt 1 at 20:54:26
+47 verbose etag "8STJ5UA3B7WCKOSGF579AUIRG"
+48 http GET https://registry.npmjs.org/gulp
+49 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND
+50 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND
+51 info trying registry request attempt 2 at 20:54:36
+52 http GET https://registry.npmjs.org/%E2%80%93save-dev
+53 info trying registry request attempt 2 at 20:54:36
+54 verbose etag "8STJ5UA3B7WCKOSGF579AUIRG"
+55 http GET https://registry.npmjs.org/gulp
+56 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND
+57 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND
+58 info trying registry request attempt 3 at 20:55:36
+59 http GET https://registry.npmjs.org/%E2%80%93save-dev
+60 info trying registry request attempt 3 at 20:55:36
+61 verbose etag "8STJ5UA3B7WCKOSGF579AUIRG"
+62 http GET https://registry.npmjs.org/gulp
+63 silly registry.get cb [ 304, undefined ]
+64 silly lockFile 370b9e36-save-dev –save-dev@
+65 silly lockFile 370b9e36-save-dev –save-dev@
+66 silly registry.get cb [ 304, undefined ]
+67 verbose etag https://registry.npmjs.org/gulp from cache
+68 silly addNameRange number 2 { name: 'gulp', range: '*', hasData: true }
+69 silly addNameRange versions [ 'gulp',
+69 silly addNameRange   [ '0.0.1',
+69 silly addNameRange     '0.0.2',
+69 silly addNameRange     '0.0.3',
+69 silly addNameRange     '0.0.4',
+69 silly addNameRange     '0.0.5',
+69 silly addNameRange     '0.0.7',
+69 silly addNameRange     '0.0.8',
+69 silly addNameRange     '0.0.9',
+69 silly addNameRange     '0.1.0',
+69 silly addNameRange     '0.2.0',
+69 silly addNameRange     '1.0.0',
+69 silly addNameRange     '1.1.0',
+69 silly addNameRange     '1.2.0',
+69 silly addNameRange     '1.2.1',
+69 silly addNameRange     '2.0.0',
+69 silly addNameRange     '2.0.1',
+69 silly addNameRange     '2.1.0',
+69 silly addNameRange     '2.2.0',
+69 silly addNameRange     '2.3.0',
+69 silly addNameRange     '2.4.0',
+69 silly addNameRange     '2.4.1',
+69 silly addNameRange     '2.6.0',
+69 silly addNameRange     '2.6.1',
+69 silly addNameRange     '2.7.0',
+69 silly addNameRange     '3.0.0',
+69 silly addNameRange     '3.1.1',
+69 silly addNameRange     '3.1.2',
+69 silly addNameRange     '3.1.3',
+69 silly addNameRange     '3.1.4',
+69 silly addNameRange     '3.2.0',
+69 silly addNameRange     '3.2.1',
+69 silly addNameRange     '3.2.2',
+69 silly addNameRange     '3.2.3',
+69 silly addNameRange     '3.2.4',
+69 silly addNameRange     '3.2.5',
+69 silly addNameRange     '3.3.0',
+69 silly addNameRange     '3.3.1',
+69 silly addNameRange     '3.3.2',
+69 silly addNameRange     '3.3.4',
+69 silly addNameRange     '3.4.0',
+69 silly addNameRange     '3.5.0',
+69 silly addNameRange     '3.5.1',
+69 silly addNameRange     '3.5.2',
+69 silly addNameRange     '3.5.5',
+69 silly addNameRange     '3.5.6',
+69 silly addNameRange     '3.6.0',
+69 silly addNameRange     '3.6.1',
+69 silly addNameRange     '3.6.2',
+69 silly addNameRange     '3.7.0',
+69 silly addNameRange     '3.8.0',
+69 silly addNameRange     '3.8.1',
+69 silly addNameRange     '3.8.2',
+69 silly addNameRange     '3.8.3',
+69 silly addNameRange     '3.8.4',
+69 silly addNameRange     '3.8.5',
+69 silly addNameRange     '3.8.6',
+69 silly addNameRange     '3.8.7',
+69 silly addNameRange     '3.8.8',
+69 silly addNameRange     '3.8.9',
+69 silly addNameRange     '3.8.10',
+69 silly addNameRange     '3.8.11',
+69 silly addNameRange     '3.9.0' ] ]
+70 verbose addNamed [ 'gulp', '3.9.0' ]
+71 verbose addNamed [ '3.9.0', '3.9.0' ]
+72 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+73 verbose lock gulp@3.9.0 C:\Users\ardutta\AppData\Roaming\npm-cache\c2697a61-gulp-3-9-0.lock
+74 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+75 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+76 silly lockFile 72f4391e-gulp gulp@
+77 silly lockFile 72f4391e-gulp gulp@
+78 error Error: failed to fetch from registry: https://registry.npmjs.org/–save-dev
+78 error     at RegClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\get.js:159:18)
+78 error     at cb (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:57:9)
+78 error     at RegClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:156:10)
+78 error     at cb (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:166:9)
+78 error     at RegClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:259:20)
+78 error     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:238:20)
+78 error     at self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
+78 error     at Request.emit (events.js:117:20)
+78 error     at ClientRequest.self.clientErrorHandler (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:341:10)
+78 error     at ClientRequest.emit (events.js:95:17)
+79 error If you need help, you may report this *entire* log,
+79 error including the npm and node versions, at:
+79 error     <http://github.com/npm/npm/issues>
+80 error System Windows_NT 6.1.7601
+81 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "gulp" "–save-dev"
+82 error cwd C:\test\Workspace\NodeJs\YTDedicate
+83 error node -v v0.10.35
+84 error npm -v 1.4.28
+85 verbose exit [ 1, true ]

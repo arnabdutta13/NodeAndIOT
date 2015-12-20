@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+    <title>Test</title>
+    <script type="text/javascript">
+        var socket;
+        var play = 0;
+        function onload() {
+        	//alert("in onload");
+            socket = io.connect();
+             socket.on("play", function(data) {
+            	//alert("got result :: " + data.result);
+            	play = data.result;
+            	if (play === 1) {
+            		document.getElementById("play").innerHTML="System is busy playing song. Please wait to play the next song";
+            	} else {
+            		document.getElementById("play").innerHTML="System is ready to play the next song";
+            	}
+            	
+            	//alert(play);
+            });
+            socket.on("playing", function(data) {
+            	//alert("got result :: " + data.result);
+            	document.getElementById("playing").innerHTML=data.result;
+            });
+            socket.on("downloading", function(data) {
+            	//alert("got result :: " + data.result);
+            	var op = data.result;
+            	//alert(op);
+            	document.getElementById("downloading").innerHTML = op;
+            });
+        }
+        
+        function submitOn() {
+        	//alert("in submit");
+        	//alert(play);
+        	if (play === 1) {
+        		alert("Playing song at the moment. Please wait");
+        		return;
+        	}
+        	var url = document.getElementById("yturl").value;
+        	if (url == null || url === '') {
+        		alert("Please enter a youtube url");
+        		return;
+        	}
+        	//alert(url);
+        	var id = url.substring((url.indexOf("=") + 1));
+        	//alert(url + " id : " + id);
+            socket.emit("submit", {'url' : url, 'id' : id});
+        }
+        
+    </script>
+</head>
+<body onload="onload()">
+    <h1>Dedicate your song</h1>
+   		<h1><span id="downloading"></span></h1>
+    	<h1><span id="playing"></span></h1>
+    	<h1><span id="play"></span></h1>
+    	<input type="text" name="yturl" id="yturl"/>
+        <input type="submit" value="Play this song" onclick="submitOn()"/>
+   
+</body>
+</html>
