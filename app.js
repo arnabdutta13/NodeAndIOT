@@ -87,6 +87,8 @@ function run_shell(cmd, args, cb, song, socket) {
 		    isplaying = 0;
 		    socket.emit("play", {'result' : isplaying});
 		    //console.log("isplaying unset ==== " + isplaying );
+		    console.log("Removing song : " + song);
+		    fs.unlink(song);
 		});
 		
 		socket.emit("playing", {'result' : "Playing song"});
@@ -109,7 +111,7 @@ io.sockets.on("connection", function(socket) {
 		function(me, buffer) {
 			var optxt = buffer.toString();
 			me.stdout += buffer.toString();
-			socket.emit("playing", {'result' : "downloading"});
+			socket.emit("playing", {'result' : "Downloading"});
 			if (optxt.indexOf("%") > 0 ) {
 				var op = "Downloaded " + optxt.substring(optxt.indexOf("%") - 4);
 				console.log(op);
