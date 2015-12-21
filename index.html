@@ -1,64 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
-    <title>Test</title>
-    <script type="text/javascript">
-        var socket;
-        var play = 0;
-        function onload() {
-        	//alert("in onload");
-            socket = io.connect();
-             socket.on("play", function(data) {
-            	//alert("got result :: " + data.result);
-            	play = data.result;
-            	if (play === 1) {
-            		document.getElementById("play").innerHTML="System is busy playing song. Please wait to play the next song";
-            	} else {
-            		document.getElementById("play").innerHTML="System is ready to play the next song";
-            	}
-            	
-            	//alert(play);
-            });
-            socket.on("playing", function(data) {
-            	//alert("got result :: " + data.result);
-            	document.getElementById("playing").innerHTML=data.result;
-            });
-            socket.on("downloading", function(data) {
-            	//alert("got result :: " + data.result);
-            	var op = data.result;
-            	//alert(op);
-            	document.getElementById("downloading").innerHTML = op;
-            });
-        }
-        
-        function submitOn() {
-        	//alert("in submit");
-        	//alert(play);
-        	if (play === 1) {
-        		alert("Playing song at the moment. Please wait");
-        		return;
-        	}
-        	var url = document.getElementById("yturl").value;
-        	if (url == null || url === '') {
-        		alert("Please enter a youtube url");
-        		return;
-        	}
-        	//alert(url);
-        	var id = url.substring((url.indexOf("=") + 1));
-        	//alert(url + " id : " + id);
-            socket.emit("submit", {'url' : url, 'id' : id});
-        }
-        
-    </script>
+<link rel="shortcut icon" href="favicon.png">
+<link rel="icon" type="image/gif" href="favicon.png">
+<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+<title>Dedicate your song</title>
+<script type="text/javascript">
+	var socket;
+	var play = 0;
+	function onload() {
+		//alert("in onload");
+		socket = io.connect();
+		socket.on("play", function(data) {
+			//alert("got result :: " + data.result);
+			play = data.result;
+			if (play === 1) {
+				document.getElementById("play").innerHTML = "System is busy playing song. Please wait to play the next song";
+			} else {
+				document.getElementById("play").innerHTML = "System is ready to play the next song";
+			}
+
+			//alert(play);
+		});
+		socket.on("playing", function(data) {
+			//alert("got result :: " + data.result);
+			//document.getElementById("playing").innerHTML = data.result;
+			document.getElementById("downloading").innerHTML = data.result;
+		});
+		socket.on("downloading", function(data) {
+			//alert("got result :: " + data.result);
+			var op = data.result;
+			//alert(op);
+			document.getElementById("downloading").innerHTML = op;
+		});
+	}
+
+	function submitOn() {
+		//alert("in submit");
+		//alert(play);
+		if (play === 1) {
+			alert("Playing song at the moment. Please wait");
+			return;
+		}
+		var url = document.getElementById("yturl").value;
+		if (url == null || url === '') {
+			alert("Please enter a youtube url");
+			return;
+		}
+		//alert(url);
+		var id = url.substring((url.indexOf("=") + 1));
+		//alert(url + " id : " + id);
+		socket.emit("submit", {
+			'url' : url,
+			'id' : id
+		});
+	}
+
+	function OpenInNewTab() {
+		var url = "http://www.youtube.com/results?search_query="
+				+ document.getElementById("search_query").value;
+		var win = window.open(url, '_blank');
+		win.focus();
+	}
+</script>
+<style>
+body {
+
+	background-image: url("bg4.jpg");
+	background-size: 100% 250%;	
+	background-repeat: no-repeat;
+}
+.txtstyle {
+	color: white;
+}
+span {
+	color: white;
+}
+.inputfield {
+	width: 500px;
+}
+.btn {
+	width: 100px;
+}
+input {
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+div {
+	padding-top: 10px;
+}
+</style>
 </head>
 <body onload="onload()">
-    <h1>Dedicate your song</h1>
-   		<h1><span id="downloading"></span></h1>
-    	<h1><span id="playing"></span></h1>
-    	<h1><span id="play"></span></h1>
-    	<input type="text" name="yturl" id="yturl"/>
-        <input type="submit" value="Play this song" onclick="submitOn()"/>
-   
+	<div align="center" >
+		<h1 class="txtstyle">Dedicate your song</h1>
+		<div class="txtstyle">
+			<span>Please enter the song you want to search on Youtube.
+				Please note that a new tab will open with the search results on
+				youtube </span>
+		</div>
+		<div>
+			<input id="search_query" type="text" maxlength="128" class="inputfield"/> 
+			<input type="submit" value="Search" onclick="OpenInNewTab();" class="btn"/>
+		</div>
+		<div style="height: 20px"></div>
+		<div class="txtstyle">
+			<span>Please type/paste the youtube URL of the song you want
+				to dedicate </span>
+		</div>
+		<div>
+			<input type="text" name="yturl" id="yturl" class="inputfield"/> 
+			<input type="submit" value="Play this song" onclick="submitOn()" />
+		</div>
+		<div>
+			<div>
+				<span id="downloading"></span>
+			</div>
+			<div>
+				<span id="playing"></span>
+			</div>
+			<div>
+				<span id="play"></span>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
+
