@@ -11,6 +11,7 @@
 	function onload() {
 		//alert("in onload");
 		socket = io.connect();
+		document.getElementById("error").innerHTML = "";
 		socket.on("play", function(data) {
 			//alert("got result :: " + data.result);
 			play = data.result;
@@ -39,21 +40,26 @@
 	function submitOn() {
 		//alert("in submit");
 		//alert(play);
+		document.getElementById("error").innerHTML = "";
 		if (play === 1) {
-			alert("Playing song at the moment. Please wait");
+			//alert("Playing song at the moment. Please wait");
+			document.getElementById("error").innerHTML = "Playing song at the moment. Please wait";
 			return;
 		}
 		var url = document.getElementById("yturl").value;
 		if (url == null || url === '') {
-			alert("Please enter a youtube url");
+			//alert("Please enter a youtube url");
+			document.getElementById("error").innerHTML = "Please enter a youtube url";
 			return;
 		}
 		if ((url.indexOf("http://") < 0) && (url.indexOf("https://") < 0)) {
-			alert("Please enter a valid youtube url");
+			//alert("Please enter a valid youtube url");
+			document.getElementById("error").innerHTML = "Please enter a valid youtube url";
 			return;
 		}
 		if ((url.indexOf("youtube") < 0) && (url.indexOf("youtu.be") < 0)) {
-			alert("Please enter a youtube url");
+			//alert("Please enter a youtube url");
+			document.getElementById("error").innerHTML = "Please enter a youtube url";
 			return;
 		}
 		//alert(url);
@@ -98,17 +104,23 @@ span {
 	width: 100px;
 }
 input {
- padding-top: 5px;
- padding-bottom: 5px;
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;
 }
 div {
 	padding-top: 10px;
+}
+.error{
+	color: red;
 }
 </style>
 </head>
 <body onload="onload()">
 	<div align="center" >
 		<h1 class="txtstyle">Dedicate your song</h1>
+		<div>
+			<span id="error" class="error"></span>
+		</div>
 		<div class="txtstyle">
 			<span>Please enter the song you want to search on Youtube.
 				Please note that a new tab will open with the search results on
