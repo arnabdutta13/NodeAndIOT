@@ -48,8 +48,8 @@ var handler = function(request, response) {
 
 		});
 	}
-	if (pathname.substr(1) === 'favicon.png') {
-		fs.readFile(__dirname + "/favicon.png", function(error, data) {
+	if (pathname.substr(1) === 'favicon.ico') {
+		fs.readFile(__dirname + "/favicon.ico", function(error, data) {
 			if (error) {
 				response.writeHead(500, {
 					"Content-Type" : "text/plain"
