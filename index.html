@@ -48,8 +48,22 @@
 			alert("Please enter a youtube url");
 			return;
 		}
+		if ((url.indexOf("http://") < 0) && (url.indexOf("https://") < 0)) {
+			alert("Please enter a valid youtube url");
+			return;
+		}
+		if ((url.indexOf("youtube") < 0) && (url.indexOf("youtu.be") < 0)) {
+			alert("Please enter a youtube url");
+			return;
+		}
 		//alert(url);
-		var id = url.substring((url.indexOf("=") + 1));
+		var id = "";
+		if (url.indexOf("youtube") > 0) {
+			id = url.substring((url.indexOf("=") + 1));
+		}
+		if (url.indexOf("youtu.be") > 0) {
+			id = url.substring((url.lastIndexOf("/") + 1));
+		}
 		//alert(url + " id : " + id);
 		socket.emit("submit", {
 			'url' : url,
